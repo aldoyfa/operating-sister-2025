@@ -12,6 +12,16 @@
 #define CURSOR_PORT_CMD 0x03D4
 #define CURSOR_PORT_DATA 0x03D5
 
+struct FramebufferState
+{
+  int cur_row;
+  int cur_col;
+  int start_row;
+  int start_col;
+} __attribute((packed));
+
+extern struct FramebufferState framebuffer_state;
+
 /**
  * Terminal framebuffer
  * Resolution: 80x25

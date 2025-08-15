@@ -85,6 +85,12 @@ struct ProcessControlBlock{
 
 extern struct ProcessControlBlock _process_list[PROCESS_COUNT_MAX];
 
+struct ProcessManagerState {
+    uint32_t active_process_count;
+};
+
+extern struct ProcessManagerState process_manager_state;
+
 struct ProcessControlBlock* process_get_current_running_pcb_pointer(void);
 
 int32_t process_create_user_process(struct FAT32DriverRequest request);
